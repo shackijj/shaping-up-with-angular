@@ -5,13 +5,28 @@
         this.products = gems;
     });
 
+    app.controller('PanelController', function() {
+        this.tab = 1;
+        this.selectTab = function(setTab) {
+            this.tab = setTab;
+        };
+
+        this.isSelected = function(tab) {
+            return this.tab === tab;
+        };
+    });
+
     var gems = [
         {
-            name: 'Dodecahedron',
-            price: 2.95,
-            description: '. . . ',
+            name: 'Ruby',
+            price: 2,
+            description: 'Magic ruby',
             canPurchase: true,
-            soldOut: false
+            soldOut: false,
+            images : [{
+                full: 'img/ruby.png',
+                thumb: 'dodecahedron-thumb.jpeg',
+            }]
         },
         {
             name: 'Pentagonal Gem',
