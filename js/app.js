@@ -16,6 +16,15 @@
         };
     });
 
+    app.controller('ReviewController', function() {
+        this.review = {};
+
+        this.addReview = function(product) {
+            product.reviews.push(this.review);
+            this.review = {};
+        }
+    });
+
     var gems = [
         {
             name: 'Ruby',
@@ -26,7 +35,19 @@
             images : [{
                 full: 'img/ruby.png',
                 thumb: 'dodecahedron-thumb.jpeg',
-            }]
+            }],
+            reviews: [
+                {
+                    stars: 5,
+                    body: "I love that product",
+                    author: "joe@thomas.com"
+                },
+                {
+                    stars: 2,
+                    body: "I hate that product",
+                    author: "tim@haiter.com"
+                }
+            ]
         },
         {
             name: 'Pentagonal Gem',
